@@ -63,7 +63,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="pageTitle">Contact Us</h2>
+				<h2 class="pageTitle">在线留言</h2>
 			</div>
 		</div>
 	</div>
@@ -74,46 +74,47 @@
 		<div class="row"> 
 							<div class="col-md-12">
 								<div class="about-logo">
-									<h3>Voluptatem Accusantium Doloremque</h3>
-									<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
-                                    	<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>
+									<!--<h3>Voluptatem Accusantium Doloremque</h3>-->
+									<p>亲爱的客户，如有任何意见或者建议，请在下方留言。</p>
+                                    <!--aque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas</p>-->
 								</div>  
 							</div>
 						</div>
 	<div class="row">
 								<div class="col-md-6">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor.</p>
+									<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor.</p>-->
 								  	
 		   <!-- Form itself -->
           <form name="sentMessage" id="contactForm"  novalidate>
-	       <h3>Contact me</h3>
+	       <h3>留言框</h3>
 		 <div class="control-group">
                     <div class="controls">
 			<input type="text" class="form-control" 
-			   	   placeholder="Full Name" id="name" required
-			           data-validation-required-message="Please enter your name" />
+			   	   placeholder="姓名" id="name" required
+			           data-validation-required-message="姓名" />
 			  <p class="help-block"></p>
 		   </div>
 	         </div> 	
                 <div class="control-group">
                   <div class="controls">
-			<input type="email" class="form-control" placeholder="Email" 
-			   	            id="email" required
-			   		   data-validation-required-message="Please enter your email" />
+			<input type="text" class="form-control" placeholder="联系电话" 
+			   	            id="tel" required
+			   		   data-validation-required-message="请输入您的联系电话（手机）" />
 		</div>
 	    </div> 	
-			  
+			  <p class="help-block"></p>
                <div class="control-group">
                  <div class="controls">
 				 <textarea rows="10" cols="100" class="form-control" 
-                       placeholder="Message" id="message" required
-		       data-validation-required-message="Please enter your message" minlength="5" 
+                       placeholder="留言" id="message" required
+		       data-validation-required-message="请输入您的留言供我们知晓" minlength="5" 
                        data-validation-minlength-message="Min 5 characters" 
                         maxlength="999" style="resize:none"></textarea>
 		</div>
-               </div> 		 
+               </div>
+              <p class="help-block"></p>
 	     <div id="success"> </div> <!-- For success/fail messages -->
-	    <button type="submit" class="btn btn-primary pull-right">Send</button><br />
+	    <button type="submit" class="btn btn-primary pull-left ">发送</button><br />
           </form>
 								</div>
 								<div class="col-md-6">
