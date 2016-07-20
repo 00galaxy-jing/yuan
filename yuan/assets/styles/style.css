@@ -2,7 +2,7 @@
 @import url('animate.css');
 
 body {
-	font-family:'Open Sans', Arial, sans-serif;
+	font-family:'微软雅黑';
 	font-size:14px;
 	font-weight:300;
 	line-height:1.6em;
@@ -315,9 +315,10 @@ ul.nav li.dropdown a {
 	display:none;
 }
 .pageTitle{
-color: #fff;
-margin: 30px 0 3px;
-display: inline-block;
+	font-family: "楷体";
+	color: #fff;
+	margin: 30px 0 3px;
+	display: inline-block;
 }
 .panel-body{
 color:#000;
