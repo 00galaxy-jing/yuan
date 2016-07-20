@@ -48,4 +48,7 @@ module.exports.routes = {
 
   /*******公司简介********/
   '/contact':{view:'contact'},
+
+  /*******诚聘英才********/
+  '/recruit':{view:'recruit'},
 };

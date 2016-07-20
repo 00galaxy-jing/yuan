@@ -118,6 +118,26 @@ header .navbar {
 color: #1891EC;
 }
 
+.recruit_table_row_cell {
+	width:20%;
+	margin:0px;
+
+}
+
+.recruit_div_module_modification{
+	font-family: "微软雅黑";
+	font-size:18px;
+	font-weight: 100;
+}
+
+.recruit_table_row_cell_collapse{
+	font-weight:100;
+	font-size: 14px;
+}
+.collapse_ClassForBackGroundColor{
+	background-color: white;
+
+}
 header .navbar-collapse  ul.navbar-nav {
     float: right;
     margin-right: 0;
