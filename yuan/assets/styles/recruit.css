@@ -1,0 +1,43 @@
+a,a:focus{
+	outline:none;   
+	-moz-outline:none;
+}
+.first_panel{
+	font-size: 18px;
+}
+.recruit_icon{
+	width: 5%;
+}
+#up_png>img{
+	width: 10px;
+}
+.panel-default>.panel-heading{
+	background-color:white;
+	border:0px;
+	border-bottom: 1px solid #14ab96;
+}
+.recruit_table_row_cell {
+	width:20%;
+	margin:0px;
+
+}
+.recruit_div_module_modification{
+	font-family: "微软雅黑";
+	font-size:18px;
+	font-weight: 100;
+}
+
+.recruit_table_row_cell_collapse{
+	font-weight:100;
+	font-size: 14px;
+	margin: 0px;
+}
+.collapse_ClassForBackGroundColor{
+	background-color: white;
+}
+#recruit_row1>label{
+
+}
+.panel-body{
+	padding:10px 75px;
+}
