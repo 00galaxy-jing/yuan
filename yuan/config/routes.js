@@ -51,4 +51,7 @@ module.exports.routes = {
 
   /*******诚聘英才********/
   '/recruit':{view:'recruit'},
+
+  /*******诚聘英才********/
+  '/partner':{view:'partner'},
 };

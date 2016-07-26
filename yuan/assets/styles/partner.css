@@ -1,0 +1,33 @@
+.LeftDiv{
+	float:left;
+	width:15%;
+	background-color: #f4f4f4;
+	margin-right: 2%;
+	word-break:break-all;
+	word-wrap:break-word;
+	padding:10px;
+	font-size: 18px;
+	line-height: 34px;
+}
+
+.RightDiv{
+	float:left;
+	width:83%;
+}
+
+.company_partner{
+	/*border:2px solid #14ab96;*/
+	height: 300px;
+	margin-bottom: 30px;
+}
+
+.SetsOfImage{
+	width:283px;
+	height:213px;
+	margin-bottom: 5px;
+}
+
+.SetsOfSpan{
+	font-size: 18px;
+	font-color:black;
+}
