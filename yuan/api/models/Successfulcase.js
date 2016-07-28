@@ -1,11 +1,13 @@
 module.exports = {
 	tableName: 'successfulcase',
+	autoCreatedAt:false,
+	autoUpdatedAt:false,
 	attributes:{
 		sc_id: {  
 		    type: 'integer',  
-		    required: true,  
+		    primaryKey: true,
 		    unique:true,
-		    primaryKey: true  
+		    autoIncrement: true 
 		  },  
 		sc_company_name: {  
 		    type: 'text',  
@@ -17,9 +19,8 @@ module.exports = {
 		    required: true  
 		  },  
 		sc_is_deleted: {  
-		    type: 'integer', 
-		    size: 1, 
-		    defaultsTo: '0',
+		    type: 'boolean', 
+		    defaultsTo: 'false',
 		    required:true  
 		  }, 
 	}

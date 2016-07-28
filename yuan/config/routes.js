@@ -48,10 +48,17 @@ module.exports.routes = {
 
   /*******公司简介********/
   '/contact':{view:'contact'},
+  'post /addText': 'FeedbackController.addText',
 
   /*******诚聘英才********/
   '/recruit':'JobpostingsController.view_jobpostings',
 
   /*******诚聘英才********/
   '/partner':{view:'partner'},
+
+  /*************错误处理***********/
+  '/serverError':{view:'500'},
+  '/notFind':{view:'404'},
+  '/wecahtError':{view:'500'},
+
 };

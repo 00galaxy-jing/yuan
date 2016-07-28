@@ -1,41 +1,34 @@
 module.exports = {
-	tableName: 'jobpostings',
-	autoCreatedAt:false,
+	tableName: 'feedback',
+	autoCreatedAt:true,
 	autoUpdatedAt:false,
 	attributes:{
-		jp_id: {  
+		fb_id: {  
 		    type: 'integer',  
 		    primaryKey: true,
 		    unique:true,
 		    autoIncrement: true 
 		  },  
-		jp_title: {  
+		fb_name: {  
 		    type: 'String',  
-		    size: 15,
+		    size: 20,
 		    required: true  
 		  },  
-		jp_requirement: {  
-		    type: 'text',  
+		fb_tel: {  
+		    type: 'String',
+		    size: 50,  
 		    required: true  
 		  },  
-		jp_salary: {  
-		    type: 'String', 
-		    size: 20, 
+		fb_content: {  
+		    type: 'text', 
 		    required:true  
 		  }, 
-		jp_job_details:{
-			type: 'text',
+		fb_is_read:{
+			type: 'boolean',
+			defaultsTo: false,
 			required: true
 		},
-		jp_pubtime:{
-			type: 'date',
-			required:true
-		},
-		jp_endtime:{
-			type: 'date',
-			required:true
-		},
-		jp_is_deleted:{
+		fb_is_deleted:{
 			type: 'boolean',
 			defaultsTo:false,
 			required: true
