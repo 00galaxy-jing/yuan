@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <link href="../styles/recruit.css" rel="stylesheet" />
 <link href="../styles/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="../styles/flexslider.css" rel="stylesheet" />
@@ -45,7 +47,7 @@
 	    </div>
 	  </div>
 
-	  <% for(i=0;i<5;i++){%>
+	  <% for(i=0;i<jobs.length;i++){%>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
@@ -54,19 +56,27 @@
 	          	<a data-toggle="collapse" data-parent="#accordion" 
 	          href="#collapse<%=i%>"><label class="recruit_icon" id="up_png"><img  src="../images/icon/left.png"></label></a>
 	         	<label class="recruit_table_row_cell">
-	         		职称<%=i%>
+	         		<%=jobs[i]['jp_title']%>
 	         	</label>
 
 	         	<label class="recruit_table_row_cell">
-	         		￥<%=i%>
+	         		<%=jobs[i]['jp_salary']%>
 	         	</label>
 
 	         	<label class="recruit_table_row_cell">
-	         		2016-7-20
+	         		<%
+	    				var ptime=new Date(jobs[i]['jp_pubtime']);
+	    				var pubtime = ptime.getFullYear()+'-'+(ptime.getMonth()+1)+'-'+ptime.getDate();
+	    			%>
+	    			<%=pubtime%>
 	         	</label>
 
 	         	<label class="recruit_table_row_cell">
-	         		2016-7-21
+	         		<%
+	    				var etime=new Date(jobs[i]['jp_endtime']);
+	    				var endtime = etime.getFullYear()+'-'+(etime.getMonth()+1)+'-'+etime.getDate();
+	    			%>
+	    			<%=endtime%>
 	         	</label>
 	         </div>
 
@@ -81,7 +91,7 @@
 	       		</label>
 
 	       		<p class="recruit_table_row_cell_collapse" style="margin-left:30px">
-	       			......
+	       			<%=jobs[i]['jp_job_details']%>
 	       		</p>
 	       	</div>
 
@@ -91,9 +101,14 @@
 	       		</label>
 
 	       		<ol type=1 class="recruit_table_row_cell_collapse">
-	       			<li>...</li>
-	       			<li>...</li>
-	       			<li>...</li>
+	       			<% 
+	       				var str = jobs[i]['jp_requirement'];
+	       				var strs = new Array();
+	       				strs = str.split("；");
+	       				for(j=0;j<strs.length;j++){
+	       			%>
+	       					<li><%=strs[j]%></li>
+	       				<%}%>
 	       		</ol>
 	       	</div>
 	      </div>

@@ -50,7 +50,7 @@ module.exports.routes = {
   '/contact':{view:'contact'},
 
   /*******诚聘英才********/
-  '/recruit':{view:'recruit'},
+  '/recruit':'JobpostingsController.view_jobpostings',
 
   /*******诚聘英才********/
   '/partner':{view:'partner'},
