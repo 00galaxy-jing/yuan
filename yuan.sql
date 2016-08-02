@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-07-28 14:55:32
+Date: 2016-07-28 23:43:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -89,18 +89,20 @@ CREATE TABLE `companyregistration` (
 -- ----------------------------
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE `feedback` (
-  `fb_id` int(11) NOT NULL,
-  `fb_email` varchar(20) NOT NULL,
-  `fb_tel` varchar(15) NOT NULL,
-  `fb_content` text NOT NULL,
-  `fb_is_read` tinyint(1) NOT NULL DEFAULT '0',
-  `fb_is_delete` tinyint(1) NOT NULL DEFAULT '0',
+  `fb_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `fb_name` varchar(20) DEFAULT NULL,
+  `fb_tel` varchar(50) DEFAULT NULL,
+  `fb_content` longtext,
+  `fb_is_read` tinyint(1) DEFAULT NULL,
+  `fb_is_deleted` tinyint(1) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
   PRIMARY KEY (`fb_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of feedback
 -- ----------------------------
+INSERT INTO `feedback` VALUES ('1', '避避', '132135461', '这是一条留言', '0', '0', '2016-07-28 23:09:22');
 
 -- ----------------------------
 -- Table structure for jobpostings
@@ -115,17 +117,15 @@ CREATE TABLE `jobpostings` (
   `jp_pubtime` date DEFAULT NULL,
   `jp_endtime` date DEFAULT NULL,
   `jp_is_deleted` int(11) DEFAULT NULL,
-  `createdAt` datetime DEFAULT NULL,
-  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`jp_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jobpostings
 -- ----------------------------
-INSERT INTO `jobpostings` VALUES ('1', '工作1', '本科；20-35岁', '1500-2500', '这是工作1的简介', '2016-07-20', '2016-07-29', '0', null, null);
-INSERT INTO `jobpostings` VALUES ('2', '工作2', '本科；3年以上经验；25-40岁', '2000-3500', '这是工作2的简介', '2016-07-14', '2016-07-30', '0', null, null);
-INSERT INTO `jobpostings` VALUES ('3', '工作3', '高中及以上；勤劳；有经验', '1000-1800', '这是工作3的简介', '2016-07-12', '2016-07-24', '0', null, null);
+INSERT INTO `jobpostings` VALUES ('1', '工作1', '本科；20-35岁', '1500-2500', '这是工作1的简介', '2016-07-20', '2016-07-29', '0');
+INSERT INTO `jobpostings` VALUES ('2', '工作2', '本科；3年以上经验；25-40岁', '2000-3500', '这是工作2的简介', '2016-07-14', '2016-07-30', '0');
+INSERT INTO `jobpostings` VALUES ('3', '工作3', '高中及以上；勤劳；有经验', '1000-1800', '这是工作3的简介', '2016-07-12', '2016-07-24', '0');
 
 -- ----------------------------
 -- Table structure for successfulcase
@@ -136,14 +136,29 @@ CREATE TABLE `successfulcase` (
   `sc_company_name` longtext,
   `sc_image` varchar(200) DEFAULT NULL,
   `sc_is_deleted` int(11) DEFAULT NULL,
-  `createdAt` datetime DEFAULT NULL,
-  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`sc_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of successfulcase
 -- ----------------------------
-INSERT INTO `successfulcase` VALUES ('1', '甲公司', 'jia.jpg', '0', null, null);
-INSERT INTO `successfulcase` VALUES ('2', '乙公司', 'yi.jpg', '0', null, null);
-INSERT INTO `successfulcase` VALUES ('3', '丙公司', 'bin.jpg', '0', null, null);
+INSERT INTO `successfulcase` VALUES ('1', '甲公司', 'jia.jpg', '0');
+INSERT INTO `successfulcase` VALUES ('2', '乙公司', 'yi.jpg', '0');
+INSERT INTO `successfulcase` VALUES ('3', '丙公司', 'bin.jpg', '0');
+
+-- ----------------------------
+-- Table structure for team
+-- ----------------------------
+DROP TABLE IF EXISTS `team`;
+CREATE TABLE `team` (
+  `team_id` int(11) NOT NULL,
+  `team_description` text NOT NULL,
+  `team_name` varchar(100) NOT NULL,
+  `team_img` varchar(255) NOT NULL,
+  `team_is_deleted` tinyint(1) NOT NULL,
+  PRIMARY KEY (`team_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of team
+-- ----------------------------
