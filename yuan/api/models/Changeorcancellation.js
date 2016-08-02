@@ -14,6 +14,14 @@ module.exports = {
 		    enum: [1,2,3],
 		    required: true  
 		  },  
+		cc_title_id:{
+			type: 'String',
+			size: 50
+		},
+		cc_title:{
+			type: 'String',
+			size: 100
+		},
 		cc_content: {  
 		    type: 'text',
 		    required: true  
