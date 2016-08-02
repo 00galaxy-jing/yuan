@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+<link href="../styles/contact.css" rel="stylesheet" />
+			<ul class="nav nav-pills nav-stacked">
+			   <li <%if(req.path==''){%> class="active" <%}%>> <a href="#">公司简介</a></li>
+			   <li <%if(req.path==''){%> class="active" <%}%>> <a href="#">公司荣誉</a></li>
+			   <li <%if(req.path==''){%> class="active" <%}%>> <a href="#">联系方式</a></li>
+			   <li <%if(req.path=='/contact'){%> class="active" <%}%>> <a href="#">在线留言</a></li>
+			</ul>

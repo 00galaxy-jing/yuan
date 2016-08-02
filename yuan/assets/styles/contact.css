@@ -1,0 +1,17 @@
+.catalog{
+	float:left;
+	width:20%;
+}
+
+.MessageBoard{
+	float:left;
+	width:80%;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+	background-color: #14ab96;
+}
+
+.nav li a{
+	color:#333;
+}
