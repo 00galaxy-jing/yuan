@@ -53,5 +53,5 @@ module.exports.routes = {
   '/recruit':'JobpostingsController.view_jobpostings',
 
   /*******诚聘英才********/
-  '/partner':{view:'partner'},
+  '/team':{view:'team'},
 };
