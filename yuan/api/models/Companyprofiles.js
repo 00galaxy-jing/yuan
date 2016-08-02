@@ -9,6 +9,10 @@ module.exports = {
 		    unique:true,
 		    autoIncrement: true 
 		  },  
+		cp_class:{
+			type: 'integer',
+			required: true
+		},
 		cp_profiles: {  
 		    type: 'text',  
 		    required: true  
