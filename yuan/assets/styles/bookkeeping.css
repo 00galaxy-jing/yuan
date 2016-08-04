@@ -1,7 +1,7 @@
 .bookkeepingProcess{
 	font-family: "楷体";
-	font-size: 18px;
-	font-weight: 9px;
+	font-size: 20px;
+	font-weight: 11px;
 	float: left; 
 	width: 70%;
 	margin-right: 10%;
@@ -16,4 +16,19 @@
 
 .image img{
 	height: 100%;
+}
+
+.tips{
+	font-family: "楷体";
+	font-size: 17px;
+	font-weight: 9px;
+	float: left; 
+	width: 70%;
+	margin-right: 10%;
+	margin-bottom: 20px;
+}
+
+.eachTip{
+	float: left;
+	width: 50%;
 }
