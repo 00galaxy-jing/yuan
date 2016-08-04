@@ -49,6 +49,7 @@ module.exports.routes = {
   /*******公司简介********/
   '/contact':{view:'contact'},
   'post /addText': 'FeedbackController.addText',
+  '/companyImg': 'CompanyprofilesController.view_companyImg',
 
   /*******诚聘英才********/
   '/recruit':'JobpostingsController.view_jobpostings',
