@@ -46,7 +46,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  /*******公司简介********/
+  /*******联系我们********/
   '/contact':{view:'contact'},
   'post /addText': 'FeedbackController.addText',
   '/companyImg': 'CompanyprofilesController.view_companyImg',
@@ -57,12 +57,18 @@ module.exports.routes = {
   /*******诚聘英才********/
   '/recruit':'JobpostingsController.view_jobpostings',
 
-  /*******诚聘英才********/
+  /*******公司团队********/
   '/team':{view:'team'},
 
   /*************错误处理***********/
   '/serverError':{view:'500'},
   '/notFind':{view:'404'},
   '/wecahtError':{view:'500'},
+
+  /********公司简介********/
+  '/profile':{view:'profile'},
+
+  /********联系方式********/
+  '/contactInfo':{view:'contactInfo'},
 
 };

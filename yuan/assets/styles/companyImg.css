@@ -1,0 +1,23 @@
+
+
+.ComPicture{
+	/*border:2px solid #14ab96;*/
+	height: 300px;
+	margin-bottom: 30px;
+}
+
+.SetsOfImage{
+	width:253px;
+	/*height:283px;*/
+	margin-bottom: 5px;
+}
+
+.SetsOfSpan{
+	font-size: 18px;
+	font-color:black;
+}
+
+.comImage{
+	float:left;
+	width:80%;
+}

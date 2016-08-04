@@ -1,20 +1,8 @@
 <!DOCTYPE html>
-
-<!--<% for(i=0;i<imgs.length;i++){
-		var imgstr = imgs[i]['cp_profiles'];
-		imgstr = '../images/business/'+imgstr;
-%>
-	<img src="<%=imgstr%>">
-<%}%>
--->
-
-<!DOCTYPE html>
-
 <link href="../styles/fancybox/jquery.fancybox.css" rel="stylesheet">
 <!--<link href="css/jcarousel.css" rel="stylesheet" />-->
 <link href="../styles/flexslider.css" rel="stylesheet" />
-<link href="../styles/style.css" rel="stylesheet" />
-<link href="../styles/companyImg.css" rel="stylesheet" />
+<link href="../styles/contact.css" rel="stylesheet" />
 <div id="wrapper">
 
 	<!-- start header -->
@@ -24,31 +12,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="pageTitle">公司荣誉</h2>
+				<h2 class="pageTitle">公司简介</h2>
 			</div>
 		</div>
 	</div>
 	</section>
 	<section id="content">
-
+	
 	<div class="container">
-		<div class="comImage">
-			<% for(i=0;i<imgs.length;i++){
-				var imgstr = imgs[i]['cp_profiles'];
-				imgstr = '../images/business/'+imgstr;%>
-				<div class="col-lg-4">
-					<div class="ComPicture">
-						<div>
-							<img src="<%=imgstr%>" class="SetsOfImage">
-						</div>
-						<span class="SetsOfSpan">
-							黄菁菁是相冲哔!!
-						</span>
-					</div>
-				</div>
-			<% } %>
+		<div class="comProfile">
+			<ul style="list-style-type:none">
+				<li> 电话：13707372026 </li>
+				<li> 邮箱：635211012@qq.com </li>
+			</ul>
 		</div>
-
+		
 		<div class="sidebar">
 			<div class="catalog">
 				<% include companyNav.ejs %>
@@ -58,9 +36,7 @@
 			</div>
 		</div>	
 
-
-
- 	</div>	
+	</div>
 	</section>
 	<% include footer.ejs %>
 </div>
@@ -79,6 +55,7 @@
 <script src="../js/jquery.magnific-popup.min.js"></script>
 <script src="../js/animate.js"></script>
 <script src="../js/custom.js"></script>
+
 
  <!--
  <script src="contact/jqBootstrapValidation.js"></script>
