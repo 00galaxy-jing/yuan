@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-08-02 22:44:53
+Date: 2016-08-04 15:45:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -68,11 +68,17 @@ CREATE TABLE `companyprofiles` (
   `cp_address` varchar(80) DEFAULT NULL,
   `cp_is_deleted` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`cp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of companyprofiles
 -- ----------------------------
+INSERT INTO `companyprofiles` VALUES ('1', '2', '001.jpg', null, null, null, '0');
+INSERT INTO `companyprofiles` VALUES ('2', '2', '002.jpg', null, null, null, '0');
+INSERT INTO `companyprofiles` VALUES ('3', '2', '003.jpg', null, null, null, '0');
+INSERT INTO `companyprofiles` VALUES ('4', '2', '004.jpg', null, null, null, '0');
+INSERT INTO `companyprofiles` VALUES ('5', '2', '005.jpg', null, null, null, '0');
+INSERT INTO `companyprofiles` VALUES ('6', '3', null, '0737-1234567;0737-2345678;13012345678', 'example01@qq.com;example02@163.com', '湖南省益阳市xx区xx路xx号', '0');
 
 -- ----------------------------
 -- Table structure for companyregistration

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<% for(i=0;i<infos.length;i++){
+		var str1 = infos[i]['cp_tel'];
+	    var strs1 = new Array();
+	    strs1 = str1.split(";");
+	    var str2 = infos[i]['cp_email'];
+	    var strs2 = new Array();
+	    strs2 = str2.split(";");
+%>
+
+	    <%for(j=0;j<strs1.length;j++){%>
+			<li><%=strs1[j]%></li>
+	  	<%}%>
+	  	<%for(j=0;j<strs2.length;j++){%>
+			<li><%=strs2[j]%></li>
+	  	<%}%>
+
+	<p><%=infos[i]['cp_address'] %></p>
+<%}%>

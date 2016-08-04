@@ -5,5 +5,13 @@ module.exports = {
 				return res.serverError(err);
 			return res.view('companyImg',{imgs:results});
 		})
+	},
+
+	view_contactInformation: function(req,res){
+		Jobpostings.query('SELECT * From companyprofiles WHERE cp_class=3 AND cp_is_deleted!=1',function(err,results){
+			if(err)
+				return res.serverError(err);
+			return res.view('contactInformation',{infos:results});
+		})
 	}
 }

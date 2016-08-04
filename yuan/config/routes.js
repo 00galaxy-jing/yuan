@@ -51,6 +51,9 @@ module.exports.routes = {
   'post /addText': 'FeedbackController.addText',
   '/companyImg': 'CompanyprofilesController.view_companyImg',
 
+  /*******联系方式********/
+  '/contactInfo':'CompanyprofilesController.view_contactInformation',
+
   /*******诚聘英才********/
   '/recruit':'JobpostingsController.view_jobpostings',
 
