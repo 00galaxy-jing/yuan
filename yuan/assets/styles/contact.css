@@ -6,6 +6,7 @@
 .catalog{
 	border:1px solid #14ab96;
 	border-radius: 5px;
+	margin-bottom: 18px;
 }
 
 .navTitle{
@@ -34,4 +35,13 @@
 .contactus{
 	border:1px solid #14ab96;
 	border-radius: 5px;
+}
+
+.ContactWay{
+	list-style-type:none;
+	padding-left: 30px;
+}
+
+.ContactWay>li{
+	padding-top: 10px;
 }
