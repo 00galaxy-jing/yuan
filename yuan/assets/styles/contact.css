@@ -58,3 +58,16 @@
 	font-family: "楷体";
 	margin:10px;
 }
+
+.contactInfo{
+	float:left;
+	width:80%;
+	padding-top: 30px;
+}
+
+.contactInfoFont{
+	font-family: "微软雅黑";
+	font-size:20px;
+	margin: 10px;
+	font-weight: 700;
+}

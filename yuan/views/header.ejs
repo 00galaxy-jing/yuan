@@ -24,7 +24,7 @@
                           </ul>
                         </li> 
                         <li><a href="">公司注册</a></li>
-                        <li><a href="">代理记账</a></li>
+                        <li <%if(req.path=='/bookkeeping'){%>class="active"<%}%>><a href="/bookkeeping">代理记账</a></li>
                         <li><a href="">变更注销</a></li>
                         <!--<li><a href="">公司团队</a></li>-->
                         <li <%if(req.path=='/recruit'){%>class="active"<%}%>><a href="/recruit">诚聘英才</a></li>

@@ -71,4 +71,7 @@ module.exports.routes = {
   /********联系方式********/
   '/contactInfo':{view:'contactInfo'},
 
+  /********代理记账********/
+  '/bookkeeping':{view:'bookkeeping'},
+
 };
