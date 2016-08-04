@@ -14,7 +14,7 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li <%if(req.path=='/'){%>class="active"<%}%>><a href="/">公司首页</a></li> 
-                        <li <%if(req.path=='/contact'||'/profile'){%> class="active dropdown" <%} else{%> class="dropdown" <%}%> >
+                        <li <%if(req.path=='/profile'||req.path=='/contactInfo'||req.path=='/companyImg'||req.path=='/contact'){%>class="active dropdown"<%}else{%> class="dropdown"<%}%>>
                           <a href="#" data-toggle="dropdown" class="dropdown-toggle">关于我们<b class="caret"></b></a>
                           <ul class="dropdown-menu">
                             <li><a href="/profile">公司简介</a></li>
