@@ -74,4 +74,11 @@ module.exports.routes = {
   /********代理记账********/
   '/bookkeeping':{view:'bookkeeping'},
 
+  /********公司注册********/
+  '/companyRegistration':{view:'companyRegistration'},
+
+  /********注销变更********/
+  '/changeOrCancellation':{view:'changeOrCancellation'},
+
+
 };
