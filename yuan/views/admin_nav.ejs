@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="../styles/admin.css">
+
+<h2>源圆缘管理员后台</h2>
+<ul class="nav nav-tabs">
+   <li <%if(req.path=='/adminCompany'){%>class="active"<%}%>><a href="/adminCompany">公司介绍</a></li>
+   <li <%if(req.path=='/adminUserMessage'){%>class="active"<%}%>><a href="/adminUserMessage">用户留言</a></li>
+   <li><a href="#">公司团队</a></li>
+   <li <%if(req.path=='/adminRecruit'){%>class="active"<%}%>><a href="/adminRecruit">职位招聘</a></li>
+   <li><a href="#">公司注册</a></li>
+   <li><a href="#">代理记账</a></li>
+   <li><a href="#">变更注销</a></li>
+</ul>

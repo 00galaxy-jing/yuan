@@ -1,0 +1,32 @@
+.businessimg{
+	width: 200px;
+}
+
+.nav{
+	margin-top: 20px;
+}
+
+.notread>td{
+	background-color: #D6FFFB;
+	font-weight: 600;
+}
+
+textarea{
+	vertical-align: top;
+	resize:none;
+}
+
+.form-control{
+	width: 70%;
+	display: unset;
+}
+
+.compro{
+	background-color: #f9f9f9;
+	padding:10px 30px;
+}
+
+span.title{
+	font-size: 20px;
+	margin-right: 50px;
+}

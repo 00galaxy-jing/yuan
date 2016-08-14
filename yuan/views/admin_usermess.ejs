@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="../styles/admin.css" >
+
+<div class="container">
+
+	<% include admin_nav.ejs %>
+	<h3>客户留言</h3><h5>(蓝色底的留言为未读)</h5>
+
+			<table class="table">
+			   <thead>
+			      <tr>
+			         <th>id</th>
+			         <th>客户名字</th>
+			         <th>联系方式</th>
+			         <th>留言内容</th>
+			         <th>创建时间</th>
+			         <th>被删除？</th>
+			         <th></th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	<% for(i=0;i<userm.length;i++){ %>			 
+			      <tr <%if(userm[i]['fb_is_read']==0){%>class="notread"<%}%> >
+			         <td><%=userm[i]['fb_id']%></td>
+			         <td><%=userm[i]['fb_name']%></td>
+			         <td><%=userm[i]['fb_tel']%></td>
+			         <td><%=userm[i]['fb_content']%></td>
+			         <td>
+			         	<%
+	    					var ptime=new Date(userm[i]['createdAt']);
+	    					var pubtime = ptime.getFullYear()+'-'+(ptime.getMonth()+1)+'-'+ptime.getDate()+' '+ptime.getHours()+':'+ptime.getMinutes()+':'+ptime.getSeconds();
+	    				%>
+	    				<%=pubtime%>
+	    			</td>
+			         <% if(userm[i]['fb_is_deleted'])
+			         		is_delete = '是';
+			         	else
+			         		is_delete = '否';
+			         %>
+			         <td><%=is_delete%></td>
+			         <td>
+			         	<%if(userm[i]['fb_is_read']==0){ %>
+			         		<a href="javascript:void(0)">标为已读</a>
+			         	<%}else{%>
+			         		<a href="javascript:void(0)">标为未读</a>
+			         	<%}%>
+			         </td>
+			      </tr>
+			   <%}%>
+			   </tbody>
+			</table>
+</div>
+
+<script type="text/javascript">
+
+	$('td a').click(function () {
+    	var mesid = $(this).parent().parent().children("td:first-child").html();
+    	var toread = ($(this).html()=='标为已读')?true:false;
+    	changeread(mesid,toread);
+	})
+	function changeread(mesid,toread){
+			$.ajax({
+	            type:'post',
+	            url:'/changeread',
+	            data:{
+	                'mesid':mesid, 
+	                'toread':toread,
+	            },
+	            success:function(data){
+	                if(data.state==1){
+	                	//alert("修改成功");
+	                	//$('#feedback').reset();
+	                    window.location.replace(window.location.href);
+	                }else if(data.state==-1){
+	                	alert("error！");
+	                    console.log("有错误");
+	                }
+	            }
+  			});
+			//var id = $(this).parent().parent().children("td:first-child").text;
+		
+        return false;
+	}
+</script>

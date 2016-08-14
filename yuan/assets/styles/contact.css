@@ -22,9 +22,12 @@
 	width:80%;
 }
 
+
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
 	background-color: white;
-	color: #14ab96;
+	color:#ffbe3b;
+	font-size:17px;
+	font-weight: 600;
 }
 
 .nav-pills li a{

@@ -80,5 +80,11 @@ module.exports.routes = {
   /********注销变更********/
   '/changeOrCancellation':{view:'changeOrCancellation'},
 
-
+  /********管理员*********/
+  '/adminCompany':'CompanyprofilesController.view_admin_profile',//公司简介
+  '/adminUserMessage':'FeedbackController.view_userMessage',
+  'post /changeread': 'FeedbackController.changeRead',
+  '/adminRecruit':'JobpostingsController.view_admin_recruit',
+  'post /changejobdelete':'JobpostingsController.changeDelete',
+  'post /addRecruit':'JobpostingsController.admin_addRecruit',
 };

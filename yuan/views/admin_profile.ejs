@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<div class="container">
+
+	<% include admin_nav.ejs %>
+	<h3>关于我们</h3>
+
+	<span class="title">公司简介</span> <a class="" data-toggle="modal" data-target="#editProModal">
+		   编辑
+		</a>
+	<% for(i=0;i<comInfos.length;i++){ %>
+			<% if(comInfos[i]['cp_class']==1){%>
+				<p class="compro"><%=comInfos[i]['cp_profiles']%></p>
+					
+			<%}%>
+	<%}%>
+	<br>
+	<br>
+
+			<h4>联系方式</h4>
+			<table class="table table-striped">
+			   <thead>
+			      <tr>
+			         <th>电话</th>
+			         <th>邮箱</th>
+			         <th>地址</th>
+			         <th>被删除？</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	<% for(i=0;i<comInfos.length;i++){ %>
+			   	<% if(comInfos[i]['cp_class']==3){ %>
+			      <tr>
+			      	 <%
+			      	 	var str1 = comInfos[i]['cp_tel'];
+					    var strs1 = new Array();
+					    strs1 = str1.split(";");
+					    var str2 = comInfos[i]['cp_email'];
+					    var strs2 = new Array();
+					    strs2 = str2.split(";");
+			      	 %>
+			         <td><%for(j=0;j<strs1.length;j++){%>
+							<li><%=strs1[j]%></li>
+	  					<%}%>
+	  				 </td>
+			         <td><%for(j=0;j<strs2.length;j++){%>
+							<li><%=strs2[j]%></li>
+	  					<%}%>
+	  				 </td>
+			         <td><%=comInfos[i]['cp_address']%></td>
+			         <% if(comInfos[i]['cp_is_deleted'])
+			         		is_delete = '是';
+			         	else
+			         		is_delete = '否';
+			         %>
+			         <td><%=is_delete%></td>
+			      </tr>
+			    <%}%>
+			    <%}%>
+			   </tbody>
+			</table>
+
+			<h4>公司荣誉</h4>
+			<table class="table table-striped">
+			   <thead>
+			      <tr>
+			         <th>图片</th>
+			         <th>内容</th>
+			         <th>被删除？</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	<% for(i=0;i<comInfos.length;i++){ %>
+			   	<% if(comInfos[i]['cp_class']==2){ %>
+			      <tr>
+			      	 <% imgLink = '../images/business/'+comInfos[i]['cp_profiles']%>
+			         <td><a href="<%=imgLink%>"><img src="<%=imgLink%>" class="businessimg"></a></td>
+			         <td><%=comInfos[i]['cp_address']%></td>
+			         <% if(comInfos[i]['cp_is_deleted'])
+			         		is_delete1 = '是';
+			         	else
+			         		is_delete1 = '否';
+			         %>
+			         <td><%=is_delete1%></td>
+			      </tr>
+			    <%}%>
+			    <%}%>
+			   </tbody>
+			</table>
+
+	<!--modal-->
+	<div class="modal fade" id="editProModal" >
+		   <div class="modal-dialog">
+		      <div class="modal-content">
+		         <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+		            </button>
+		            <h4 class="modal-title" id="myModalLabel">
+		               修改公司简介
+		            </h4>
+		         </div>
+		         <form>
+			         <div class="modal-body">
+			            <p><label>公司简介</label>
+			            <textarea class="form-control" style="width:80%" required="required" id="newProfile"></textarea></p>   
+			         </div>
+			         <div class="modal-footer">
+			            <button type="button" class="btn btn-default" 
+			               data-dismiss="modal">关闭
+			            </button>
+			            <input type="submit" class="btn btn-primary" id="addJobSubmit" value="提交">
+			         </div></form>
+		      </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+</div>
+
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../js/jquery.fancybox.pack.js"></script>
+<script src="../js/jquery.fancybox-media.js"></script>  
+<script src="../js/jquery.flexslider.js"></script>
+<script src="../js/animate.js"></script> 
+<!-- Vendor Scripts -->
+<script src="../js/modernizr.custom.js"></script>
+<script src="../js/jquery.isotope.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/animate.js"></script>
+<script src="../js/custom.js"></script>
+
+<script type="text/javascript">
+	$(function () { $('#editProModal').on('show.bs.modal', function () {
+	    	var pro = $(".compro").text();
+	    	$("#newProfile").val(pro);
+	 	})
+	});
+</script>

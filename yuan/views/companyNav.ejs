@@ -3,8 +3,8 @@
 <link href="../styles/contact.css" rel="stylesheet" />
 			<div class="navTitle">关于我们</div>
 			<ul class="nav nav-pills nav-stacked">
-			   <li <%if(req.path==''){%> class="active" <%}%>> <a href="#">« &nbsp&nbsp公司简介</a></li>
-			   <li <%if(req.path==''){%> class="active" <%}%>> <a href="#">« &nbsp&nbsp公司荣誉</a></li>
-			   <li <%if(req.path==''){%> class="active" <%}%>> <a href="#">« &nbsp&nbsp联系方式</a></li>
-			   <li <%if(req.path=='/contact'){%> class="active" <%}%>> <a href="#">« &nbsp&nbsp在线留言</a></li>
+			   <li <%if(req.path=='/profile'){%> class="active" <%}%>> <a href="/profile">« &nbsp&nbsp公司简介</a></li>
+			   <li <%if(req.path=='/contactInfo'){%> class="active" <%}%>> <a href="/contactInfo">« &nbsp&nbsp联系方式</a></li>
+			   <li <%if(req.path=='/companyImg'){%> class="active" <%}%>> <a href="/companyImg">« &nbsp&nbsp公司荣誉</a></li>
+			   <li <%if(req.path=='/contact'){%> class="active" <%}%>> <a href="/contact">« &nbsp&nbsp在线留言</a></li>
 			</ul>

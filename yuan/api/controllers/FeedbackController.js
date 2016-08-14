@@ -20,5 +20,33 @@ module.exports = {
                 }); 
 			}
 		})
-	}
+	},
+
+	view_userMessage: function(req,res){
+		Companyprofiles.query('SELECT * From feedback ORDER BY fb_is_read,createdAt DESC',function(err,results){
+			if(err)
+				return res.serverError(err);
+			return res.view('admin_usermess',{userm:results});
+		})
+	},
+
+	changeRead:function(req,res){
+		var id = req.param('mesid');
+		var toread = req.param('toread');
+
+		Feedback.update({fb_id:id},{fb_is_read:toread}).exec(function updateFeedback(err,updated){
+			if(!err){
+				console.log('OK for '+updated.fb_id);
+				return res.jsonp({
+                    "state": 1
+                }); 
+			}
+			else{
+				console.log(err);
+				return res.jsonp({
+                    "state": -1
+                }); 
+			}
+		})
+	},
 }

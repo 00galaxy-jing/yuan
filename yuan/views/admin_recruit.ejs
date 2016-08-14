@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<div class="container">
+
+	<% include admin_nav.ejs %>
+	<h3>招聘职位</h3>
+
+			<table class="table">
+			   <thead>
+			      <tr>
+			         <th style="display:none">id</th>
+			         <th>招聘岗位</th>
+			         <th>招聘要求</th>
+			         <th>工作薪资</th>
+			     	 <th>工作详情</th>
+			     	 <th>发布时间</th>
+			         <th>结束时间</th>
+			         <th>被删除？</th>
+			         <th>操作</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	<% for(i=0;i<adminjobs.length;i++){ %>			 
+			      <tr>
+			      	 <td style="display:none"><%=adminjobs[i]['jp_id']%></td>
+			         <td><%=adminjobs[i]['jp_title']%></td>
+			         <td><%=adminjobs[i]['jp_requirement']%></td>
+			         <td><%=adminjobs[i]['jp_salary']%></td>
+			         <td><%=adminjobs[i]['jp_job_details']%></td>
+			         <td>
+			         	<%
+	    					var ptime=new Date(adminjobs[i]['jp_pubtime']);
+	    					var pubtime = ptime.getFullYear()+'-'+(ptime.getMonth()+1)+'-'+ptime.getDate();
+	    				%>
+	    				<%=pubtime%>
+	    			</td>
+	    			<td>
+	    				<%
+		    				var etime=new Date(adminjobs[i]['jp_endtime']);
+		    				var endtime = etime.getFullYear()+'-'+(etime.getMonth()+1)+'-'+etime.getDate();
+		    			%>
+		    			<%=endtime%>
+	    			</td>
+			         <% if(adminjobs[i]['jp_is_deleted'])
+			         		is_delete = '是';
+			         	else
+			         		is_delete = '否';
+			         %>
+			         <td><%=is_delete%></td>
+			         <td>
+			         	 <%if(adminjobs[i]['jp_is_deleted']){%>
+			         		<a href="javascript:void(0)">还原</a>
+			         	 <%}else{%>
+			         	 	<a href="javascript:void(0)">删除</a>
+			         	 <%}%>
+			         </td>
+			      </tr>
+			   <%}%>
+			   </tbody>
+			</table>
+
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">
+		   添加
+		</button>
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="addModal" >
+		   <div class="modal-dialog">
+		      <div class="modal-content">
+		         <div class="modal-header">
+		            <button type="button" class="close" 
+		               data-dismiss="modal" aria-hidden="true">
+		                  &times;
+		            </button>
+		            <h4 class="modal-title" id="myModalLabel">
+		               添加招聘信息
+		            </h4>
+		         </div>
+		         <form>
+			         <div class="modal-body">
+			            <p><label>招聘岗位</label>
+			            <input type="text" class="form-control" required="required" id="jobname"></p>
+			            <p><label>招聘要求</label>
+			            <textarea class="form-control" required="required" id="jobreq" placeholder="不同类型要求之间请用分号分隔，以使得显示更直观"></textarea></p>
+			            <p><label>工作薪资</label>
+			            <input type="text" class="form-control" required="required" id="jobsalary"></p>
+			            <p><label>工作详情</label>
+			            <textarea class="form-control" required="required" id="jobinfo"></textarea></p>
+			            <p><label>结束时间</label>
+			            <input type="date" class="form-control" required="required" id="jobendtime"></p>
+			         </div>
+			         <div class="modal-footer">
+			            <button type="button" class="btn btn-default" 
+			               data-dismiss="modal">关闭
+			            </button>
+			            <input type="submit" class="btn btn-primary" id="addJobSubmit" value="提交">
+			         </div></form>
+		      </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+</div>
+
+<script type="text/javascript">
+	$('td a').click(function () {
+    	var jobid = $(this).parent().parent().children("td:first-child").html();
+    	var tonot = ($(this).html()=='删除')?true:false;
+    	changedelete(jobid,tonot);
+	})
+
+	function changedelete(jobid,tonot){
+			$.ajax({
+	            type:'post',
+	            url:'/changejobdelete',
+	            data:{
+	                'jobid':jobid, 
+	                'tonot':tonot,
+	            },
+	            success:function(data){
+	                if(data.state==1){
+	                	//alert("修改成功");
+	                	//$('#feedback').reset();
+	                    window.location.replace(window.location.href);
+	                }else if(data.state==-1){
+	                	alert("error！");
+	                    console.log("有错误");
+	                }
+	            }
+  			});
+			//var id = $(this).parent().parent().children("td:first-child").text;
+		
+        return true;
+	}
+
+	$("#addJobSubmit").click(function(){
+		var  jobname = $("#jobname").val(); 
+        var  jobreq = $("#jobreq").val();
+        var  jobsalary = $("#jobsalary").val();
+        var  jobinfo = $("#jobinfo").val();
+        var  jobendtime = $("#jobendtime").val();
+
+        if(jobname!=""&&jobreq!=""&&jobsalary!=""&&jobinfo!=""&&jobendtime!="")
+        	{addJob(jobname,jobreq,jobsalary,jobinfo,jobendtime);}
+	})
+
+	function addJob(jobname,jobreq,jobsalary,jobinfo,jobendtime){
+		$.ajax({
+            type:'post',
+            url:'/addRecruit',
+            data:{
+                'jobname':jobname, 
+                'jobreq':jobreq,
+                'jobsalary':jobsalary,
+                'jobinfo':jobinfo,
+                'jobendtime':jobendtime,
+            },
+            success:function(data){
+                if(data.state==1){
+                	//$('#feedback').reset();
+                    window.location.replace(window.location.href);
+                }else if(data.state==-1){
+                	alert("有错误");
+                    console.log("有错误");
+                }
+            }
+  		});
+
+  		return true;
+	}
+
+	
+</script>
